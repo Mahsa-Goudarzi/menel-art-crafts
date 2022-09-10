@@ -1,0 +1,56 @@
+:root {
+  --deep-purple: #656cec;
+  --light-purple: #bfc9ed;
+  --hover-color: #3941d4;
+  --cart-theme: #f4f4f4;
+  --borders: 15px;
+}
+
+.item {
+  margin: 25px;
+  border: solid 1px var(--cart-theme);
+  background-color: var(--cart-theme);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.button {
+  font-size: 0.8rem;
+  color: white;
+  padding: var(--borders);
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--hover-color);
+}
+
+.detail {
+  background: var(--light-purple);
+}
+
+.cart {
+  background: var(--deep-purple);
+}
+
+.title {
+  font-weight: bolder;
+  margin: var(--borders) auto;
+}
+.title:hover {
+  color: var(--deep-purple);
+}
+
+.detail {
+  text-decoration: none;
+}
+
+.detail:hover {
+  color: white;
+}
+
+.price {
+  font-size: 1.1rem;
+  color: var(--deep-purple);
+  margin-bottom: var(--borders);
+}
