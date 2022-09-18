@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./ProductItem.module.css";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart";
 
 export default function ProductItem(props) {
+  const dispatch = useDispatch();
   const item = props.item;
+
+  function addToCartHandler() {
+    dispatch(cartActions.addProduct(item));
+  }
+
   return (
     <div className={classes.item}>
       <img src={item.url} alt={item.alt} className="img-fluid" />
@@ -13,11 +21,14 @@ export default function ProductItem(props) {
             to={`/products/${item.id}`}
             className={`col ${classes.detail} ${classes.button}`}
           >
-            Visit{" "}
+            Visit
           </Link>
-          <div className={`col ${classes.cart} ${classes.button}`}>
-            Add to cart{" "}
-          </div>
+          <button
+            className={`col ${classes.cart} ${classes.button}`}
+            onClick={addToCartHandler}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
       <h5 className={classes.title}>{item.title}</h5>

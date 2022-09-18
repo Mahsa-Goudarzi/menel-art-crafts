@@ -27,6 +27,9 @@ export default function MainNavigation() {
             <NavLink to="/products" className="nav-link">
               Products
             </NavLink>
+            <NavLink to="/cart" className="nav-link ">
+              Cart
+            </NavLink>
           </div>
         </div>
       </div>

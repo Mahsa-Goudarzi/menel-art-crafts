@@ -1,11 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { cartActions } from "../store/cart";
 
 export default function ProductDetail() {
   const params = useParams();
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const selectedProduct = products.find((item) => item.id === params.productId);
+
+  function addToCartHandler() {
+    dispatch(cartActions.addProduct(selectedProduct));
+  }
 
   if (!selectedProduct) {
     return <p>Product is not found</p>;
@@ -26,7 +32,7 @@ export default function ProductDetail() {
           <div className="col">
             <p>{selectedProduct.description}</p>
             <p>{selectedProduct.price} $</p>
-            <button>Add to cart</button>
+            <button onClick={addToCartHandler}>Add to cart</button>
           </div>
         </div>
       </div>
