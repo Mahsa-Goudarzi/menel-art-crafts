@@ -4,7 +4,7 @@ import ProductList from "../components/Products/ProductList";
 import Slider from "../components/Slider/Slider";
 
 export default function Home() {
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const newProducts = products.filter((item) => item.isNew === true);
 
   return (

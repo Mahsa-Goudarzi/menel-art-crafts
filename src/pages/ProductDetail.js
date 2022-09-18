@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
   const params = useParams();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const selectedProduct = products.find((item) => item.id === params.productId);
 
   if (!selectedProduct) {
@@ -26,6 +26,7 @@ export default function ProductDetail() {
           <div className="col">
             <p>{selectedProduct.description}</p>
             <p>{selectedProduct.price} $</p>
+            <button>Add to cart</button>
           </div>
         </div>
       </div>
