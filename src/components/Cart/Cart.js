@@ -4,6 +4,8 @@ import CartItem from "./CartItem";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart.cart);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+
   return (
     <div className="container">
       {cart.map((item) => (
@@ -11,6 +13,7 @@ export default function Cart() {
           <CartItem item={item} />
         </div>
       ))}
+      {totalPrice !== 0 && <div>{`Total Price: ${totalPrice}`}</div>}
     </div>
   );
 }
