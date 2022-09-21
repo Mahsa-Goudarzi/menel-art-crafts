@@ -4,7 +4,7 @@ import CartBadge from "../Cart/CartBadge";
 
 export default function MainNavigation() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-light sticky-top">
       <div className="container-fluid">
         <NavLink to="/" className="navbar-brand">
           <p>Logo</p>
