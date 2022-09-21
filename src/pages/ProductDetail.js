@@ -43,16 +43,21 @@ export default function ProductDetail() {
             <p>{selectedProduct.price} $</p>
 
             <form onSubmit={addToCartHandler}>
-              <label htmlFor={selectedProduct.id}>Amount</label>
+              <label htmlFor={selectedProduct.id} className="form-label">
+                Amount
+              </label>
               <input
                 ref={inputAmountRef}
+                id={selectedProduct.id}
                 type="number"
                 min="1"
                 step="1"
                 defaultValue="1"
-                id={selectedProduct.id}
+                className="form-control w-50"
               />
-              <button>Add to cart</button>
+              <button type="submit" className="btn btn-secondary">
+                Add to cart
+              </button>
             </form>
           </div>
         </div>
