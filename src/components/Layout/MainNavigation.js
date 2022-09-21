@@ -29,7 +29,7 @@ export default function MainNavigation() {
               Products
             </NavLink>
             <NavLink to="/cart" className="nav-link ">
-              Cart <CartBadge />
+              <CartBadge />
             </NavLink>
           </div>
         </div>

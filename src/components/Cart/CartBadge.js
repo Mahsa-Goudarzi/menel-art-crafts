@@ -11,6 +11,10 @@ export default function CartBadge() {
   }`;
 
   useEffect(() => {
+    if (cartTotalAmount === 0) {
+      return;
+    }
+
     setCartIsHighlighted(true);
 
     const timer = setTimeout(() => {
@@ -23,5 +27,10 @@ export default function CartBadge() {
     };
   }, [cartTotalAmount]);
 
-  return <span className={badgeClasses}>{cartTotalAmount}</span>;
+  return (
+    <div className={classes.button}>
+      <span>Cart</span>
+      <div className={badgeClasses}>{cartTotalAmount}</div>
+    </div>
+  );
 }
