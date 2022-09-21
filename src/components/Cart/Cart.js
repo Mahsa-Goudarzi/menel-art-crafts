@@ -13,7 +13,7 @@ export default function Cart() {
           <CartItem item={item} />
         </div>
       ))}
-      {totalPrice !== 0 && <div>{`Total Price: ${totalPrice}`}</div>}
+      {totalPrice !== 0 && <div>{`Total Price: ${totalPrice} $`}</div>}
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function CartItem(props) {
   const price = `${item.price} $`;
 
   function addItemHandler() {
-    dispatch(cartActions.addProduct(item));
+    dispatch(cartActions.addProduct({ ...item, amount: 1 }));
   }
 
   function removeItemHandler() {

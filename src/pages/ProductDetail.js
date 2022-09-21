@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { cartActions } from "../store/cart";
@@ -8,9 +8,18 @@ export default function ProductDetail() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const selectedProduct = products.find((item) => item.id === params.productId);
+  const inputAmountRef = useRef();
 
-  function addToCartHandler() {
-    dispatch(cartActions.addProduct(selectedProduct));
+  function addToCartHandler(event) {
+    event.preventDefault();
+    const enteredAmount = inputAmountRef.current.value; // ref.current.value is always a string
+    const enteredAmountNumber = +enteredAmount; // Converting string number to number
+    dispatch(
+      cartActions.addProduct({
+        ...selectedProduct,
+        amount: enteredAmountNumber,
+      })
+    );
   }
 
   if (!selectedProduct) {
@@ -32,7 +41,19 @@ export default function ProductDetail() {
           <div className="col">
             <p>{selectedProduct.description}</p>
             <p>{selectedProduct.price} $</p>
-            <button onClick={addToCartHandler}>Add to cart</button>
+
+            <form onSubmit={addToCartHandler}>
+              <label htmlFor={selectedProduct.id}>Amount</label>
+              <input
+                ref={inputAmountRef}
+                type="number"
+                min="1"
+                step="1"
+                defaultValue="1"
+                id={selectedProduct.id}
+              />
+              <button>Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
