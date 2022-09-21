@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import CartBadge from "../Cart/CartBadge";
 
 export default function MainNavigation() {
-  const totalCartAmount = useSelector((state) => state.cart.totalAmount);
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -30,7 +29,7 @@ export default function MainNavigation() {
               Products
             </NavLink>
             <NavLink to="/cart" className="nav-link ">
-              Cart {totalCartAmount}
+              Cart <CartBadge />
             </NavLink>
           </div>
         </div>
