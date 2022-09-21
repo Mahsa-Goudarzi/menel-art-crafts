@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart";
@@ -19,7 +20,9 @@ export default function CartItem(props) {
   return (
     <li className={classes["cart-item"]}>
       <div>
-        <h2>{item.title}</h2>
+        <Link to={`/products/${item.id}`} className={classes.title}>
+          {item.title}
+        </Link>
         <div className={classes.summary}>
           <span className={classes.price}>{price}</span>
           <span className={classes.amount}>x {item.amount}</span>
