@@ -1,15 +1,12 @@
 .button {
   display: flex;
-  justify-content: flex-start;
 }
 
 .badge {
-  flex: 0;
   color: white;
   background-color: #b94517;
   padding: 0.2rem 0.7rem;
-  margin-left: 0.5rem;
-  margin-top: -0.15rem;
+  margin: -0.15rem auto auto 0.5rem;
   border-radius: 25px;
   font-weight: bold;
 }

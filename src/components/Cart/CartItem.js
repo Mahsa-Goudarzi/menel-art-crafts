@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../store/cart";
+import { cartActions } from "../../store/cart-slice";
 
 export default function CartItem(props) {
   const dispatch = useDispatch();

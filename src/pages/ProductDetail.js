@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { cartActions } from "../store/cart";
+import { cartActions } from "../store/cart-slice";
 
 export default function ProductDetail() {
   const params = useParams();

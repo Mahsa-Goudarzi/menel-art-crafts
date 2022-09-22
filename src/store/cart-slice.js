@@ -24,16 +24,17 @@ const cartSlice = createSlice({
     },
 
     removeProduct(state, action) {
+      const id = action.payload.id;
       state.totalAmount--;
       state.totalPrice -= action.payload.price;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item.id === id
       );
       const existingCartItem = state.cart[existingCartItemIndex];
 
       if (existingCartItem.amount === 1) {
-        state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+        state.cart = state.cart.filter((item) => item.id !== id);
       } else {
         existingCartItem.amount--;
       }

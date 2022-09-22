@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import MainNavigation from "./components/Layout/MainNavigation";
+import Footer from "./components/Layout/Footer";
+
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
-import Footer from "./components/Layout/Footer";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
