@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import useHttp from "./hooks/use-http";
+import { cartActions } from "./store/cart-slice";
+import { productsActions } from "./store/products-slice";
+
 import MainNavigation from "./components/Layout/MainNavigation";
 import Footer from "./components/Layout/Footer";
 
@@ -10,6 +16,58 @@ import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 
 function App() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const { sendRequest: fetchCart } = useHttp();
+  const { sendRequest: sendCart } = useHttp();
+  const { sendRequest: fetchProducts } = useHttp();
+
+  useEffect(() => {
+    function setProductsData(data) {
+      const items = [];
+      if (data.products) {
+        for (const key in data.products) {
+          items.push({ id: key, ...data.products[key] });
+        }
+      }
+
+      dispatch(productsActions.setProducts(items));
+    }
+
+    fetchProducts(
+      {
+        url: "https://menel-shopping-website-default-rtdb.firebaseio.com/products.json",
+      },
+      setProductsData
+    );
+  }, [dispatch, fetchProducts]);
+
+  useEffect(() => {
+    function setCartData(data) {
+      if (!data.cart) {
+        dispatch(
+          cartActions.setCart({ cart: [], totalAmount: 0, totalPrice: 0 })
+        );
+      } else {
+        dispatch(cartActions.setCart(data));
+      }
+    }
+    fetchCart(
+      {
+        url: "https://menel-shopping-website-default-rtdb.firebaseio.com/cart.json",
+      },
+      setCartData
+    );
+  }, [dispatch, fetchCart]);
+
+  useEffect(() => {
+    sendCart({
+      url: "https://menel-shopping-website-default-rtdb.firebaseio.com/cart.json",
+      method: "PUT",
+      body: cart,
+    });
+  }, [cart, sendCart]);
+
   return (
     <div>
       <MainNavigation />

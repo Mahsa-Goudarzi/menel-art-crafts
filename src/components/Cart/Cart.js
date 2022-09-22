@@ -6,6 +6,10 @@ export default function Cart() {
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
+  if (!cart) {
+    return;
+  }
+
   return (
     <div className="container">
       {cart.map((item) => (
