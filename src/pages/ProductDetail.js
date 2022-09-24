@@ -27,25 +27,25 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="container m-5">
-      <h2>{selectedProduct.title}</h2>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-4">
-            <img
-              src={selectedProduct.url}
-              alt={selectedProduct.alt}
-              className="img-fluid border shadow"
-            />
-          </div>
-          <div className="col">
-            <p>{selectedProduct.description}</p>
-            <p>{selectedProduct.price} $</p>
-
-            <form onSubmit={addToCartHandler}>
-              <label htmlFor={selectedProduct.id} className="form-label">
-                Amount
-              </label>
+    <div className="container mt-5 mb-5">
+      <div className="row  m-5">
+        <div className="col-md-6 m-1">
+          <img
+            src={selectedProduct.url}
+            alt={selectedProduct.alt}
+            className="img-fluid border"
+          />
+        </div>
+        <div className="col m-1">
+          <h2>{selectedProduct.title}</h2>
+          <h3>${selectedProduct.price}</h3>
+          <hr />
+          <p>{selectedProduct.description}</p>
+          <form onSubmit={addToCartHandler} class="row g-3">
+            <div class="col-auto">
+              <label htmlFor={selectedProduct.id}>Amount:</label>
+            </div>
+            <div class="col-auto">
               <input
                 ref={inputAmountRef}
                 id={selectedProduct.id}
@@ -53,13 +53,15 @@ export default function ProductDetail() {
                 min="1"
                 step="1"
                 defaultValue="1"
-                className="form-control w-50"
+                className="form-control"
               />
-              <button type="submit" className="btn btn-secondary">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-secondary mb-3">
                 Add to cart
               </button>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ export default function MainNavigation() {
     <nav className="navbar navbar-expand-lg bg-light sticky-top">
       <div className="container-fluid">
         <NavLink to="/" className="navbar-brand">
-          <p>Logo</p>
+          <h2>Menel</h2>
         </NavLink>
         <button
           className="navbar-toggler"

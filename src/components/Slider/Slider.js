@@ -30,23 +30,23 @@ export default function Sliders() {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active" style={{ height: "460px" }}>
+        <div className="carousel-item active">
           <img
-            src="https://mymodernmet.com/wp/wp-content/uploads/2018/10/best-craft-blogs-thumbnail.jpg"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/822/original/best-craft-blogs-thumbnail.jpg?1664049765"
             className="d-block w-100"
             alt="..."
           />
         </div>
-        <div className="carousel-item" style={{ height: "460px" }}>
+        <div className="carousel-item">
           <img
-            src="https://passion.jwsuperthemes.com/wp-content/uploads/2016/08/slider-1passion.jpg"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/823/original/slider-1passion.jpg?1664049905"
             className="d-block w-100"
             alt="..."
           />
         </div>
-        <div className="carousel-item" style={{ height: "460px" }}>
+        <div className="carousel-item">
           <img
-            src="https://passion.jwsuperthemes.com/wp-content/uploads/2016/07/slider2passion.jpg"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/821/original/slider2passion.jpg?1664049574"
             className="d-block w-100"
             alt="..."
           />

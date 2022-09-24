@@ -7,7 +7,7 @@ import { cartActions } from "../../store/cart-slice";
 export default function CartItem(props) {
   const dispatch = useDispatch();
   const item = props.item;
-  const price = `${item.price} $`;
+  const price = `$${item.price}`;
 
   function addItemHandler() {
     dispatch(cartActions.addProduct({ ...item, amount: 1 }));

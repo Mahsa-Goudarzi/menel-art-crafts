@@ -1,0 +1,9 @@
+.image {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  font-size: 4rem;
+  margin: -17rem auto 15rem;
+}

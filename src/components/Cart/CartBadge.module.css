@@ -3,10 +3,11 @@
 }
 
 .badge {
+  font-size: 0.7rem;
   color: white;
   background-color: #b94517;
-  padding: 0.2rem 0.7rem;
-  margin: -0.15rem auto auto 0.5rem;
+  padding: 0.1rem 0.5rem;
+  margin: -0.4rem auto auto -0.2rem;
   border-radius: 25px;
   font-weight: bold;
 }
