@@ -41,11 +41,14 @@ export default function ProductDetail() {
           <h3>${selectedProduct.price}</h3>
           <hr />
           <p>{selectedProduct.description}</p>
-          <form onSubmit={addToCartHandler} class="row g-3">
-            <div class="col-auto">
-              <label htmlFor={selectedProduct.id}>Amount:</label>
-            </div>
-            <div class="col-auto">
+          <form onSubmit={addToCartHandler}>
+            <div class="input-group mb-3">
+              <button type="submit" class="btn btn-secondary ">
+                Add to cart
+              </button>
+              <label htmlFor={selectedProduct.id} className="visually-hidden">
+                Amount:
+              </label>
               <input
                 ref={inputAmountRef}
                 id={selectedProduct.id}
@@ -55,11 +58,6 @@ export default function ProductDetail() {
                 defaultValue="1"
                 className="form-control"
               />
-            </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-secondary mb-3">
-                Add to cart
-              </button>
             </div>
           </form>
         </div>

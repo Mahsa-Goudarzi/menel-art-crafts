@@ -1,5 +1,6 @@
 :root {
   --main-color: #3941d4;
+  --remove-button-color: rgb(228, 46, 46);
 }
 
 .cart-item {
@@ -41,7 +42,7 @@
 
 .actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 @media (min-width: 768px) {
@@ -68,5 +69,16 @@
 .cart-item button:hover,
 .cart-item button:active {
   background-color: var(--main-color);
+  color: white;
+}
+
+.cart-item button.remove {
+  color: var(--remove-button-color);
+  border: 1px solid var(--remove-button-color);
+}
+
+.cart-item button.remove:hover,
+.cart-item button.remove:active {
+  background-color: var(--remove-button-color);
   color: white;
 }

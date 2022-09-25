@@ -17,6 +17,10 @@ export default function CartItem(props) {
     dispatch(cartActions.removeProduct(item));
   }
 
+  function removeTotalHandler() {
+    dispatch(cartActions.removeTotalProduct(item));
+  }
+
   return (
     <li className={classes["cart-item"]}>
       <div>
@@ -29,8 +33,19 @@ export default function CartItem(props) {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={removeItemHandler}>−</button>
-        <button onClick={addItemHandler}>+</button>
+        <button
+          onClick={removeTotalHandler}
+          className={classes.remove}
+          title="Remove"
+        >
+          ×
+        </button>
+        <button onClick={removeItemHandler} title="Decrease">
+          −
+        </button>
+        <button onClick={addItemHandler} title="Increase">
+          +
+        </button>
       </div>
     </li>
   );
