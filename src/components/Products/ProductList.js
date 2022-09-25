@@ -1,16 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
 
 export default function ProductList(props) {
   const items = props.items;
-  const isLoading = props.loadingData.isLoading;
-  const error = props.loadingData.error;
+  const isLoading = useSelector((state) => state.products.productsAreLoading);
   return (
     <div className="container">
       {isLoading && <p>Fetching Data</p>}
-      {error && <p>Error Fetching Data</p>}
+      {items === [] && !isLoading && <p>No items here yet. Come back later!</p>}
 
-      {!isLoading && !error && items && (
+      {!isLoading && items !== [] && (
         <div className="row">
           {items.map((item) => {
             return (

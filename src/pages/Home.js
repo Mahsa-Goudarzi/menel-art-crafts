@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ProductList from "../components/Products/ProductList";
 import Slider from "../components/Slider/Slider";
 
-export default function Home(props) {
+export default function Home() {
   const products = useSelector((state) => state.products.products);
   const newProducts = products.filter((item) => item.isNew === true);
 
@@ -11,7 +11,7 @@ export default function Home(props) {
     <div>
       <Slider />
       <h4 className="text-center mt-5">New Products</h4>
-      <ProductList items={newProducts} loadingData={props.loadingData} />
+      <ProductList items={newProducts} />
     </div>
   );
 }

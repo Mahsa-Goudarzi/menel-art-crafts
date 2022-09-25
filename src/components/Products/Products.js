@@ -3,7 +3,7 @@ import ProductList from "./ProductList";
 import { useSelector } from "react-redux";
 import classes from "./Products.module.css";
 
-export default function Products(props) {
+export default function Products() {
   const products = useSelector((state) => state.products.products);
 
   return (
@@ -16,7 +16,7 @@ export default function Products(props) {
         />
         <h1 className={classes.hero}>Products</h1>
       </span>
-      <ProductList items={products} loadingData={props.loadingData} />
+      <ProductList items={products} />
     </React.Fragment>
   );
 }

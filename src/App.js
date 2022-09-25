@@ -20,7 +20,7 @@ function App() {
   const cart = useSelector((state) => state.cart);
   const { sendRequest: fetchCart } = useHttp();
   const { sendRequest: sendCart } = useHttp();
-  const { isLoading, error, sendRequest: fetchProducts } = useHttp();
+  const { sendRequest: fetchProducts } = useHttp();
 
   useEffect(() => {
     function setProductsData(data) {
@@ -31,6 +31,7 @@ function App() {
         }
       }
       dispatch(productsActions.setProducts(items));
+      dispatch(productsActions.handleProductsLoading(false));
     }
 
     fetchProducts(
@@ -72,14 +73,8 @@ function App() {
       <MainNavigation />
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={<Home loadingData={{ isLoading, error }} />}
-          />
-          <Route
-            path="/products"
-            element={<ProductsPage loadingData={{ isLoading, error }} />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/*" element={<NotFound />} />
