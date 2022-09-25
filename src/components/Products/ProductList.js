@@ -7,10 +7,12 @@ export default function ProductList(props) {
   const isLoading = useSelector((state) => state.products.productsAreLoading);
   return (
     <div className="container">
-      {isLoading && <p>Fetching Data</p>}
-      {items === [] && !isLoading && <p>No items here yet. Come back later!</p>}
+      {isLoading && <p className="text-center">Fetching Data</p>}
+      {items.length === 0 && !isLoading && (
+        <p className="text-center">No items here yet. Come back later!</p>
+      )}
 
-      {!isLoading && items !== [] && (
+      {!isLoading && items.length !== 0 && (
         <div className="row">
           {items.map((item) => {
             return (
