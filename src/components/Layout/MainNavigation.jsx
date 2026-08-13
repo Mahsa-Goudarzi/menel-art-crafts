@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import CartBadge from "../Cart/CartBadge";
 
 export default function MainNavigation() {

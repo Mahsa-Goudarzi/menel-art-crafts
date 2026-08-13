@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.5",
+    "@reduxjs/toolkit": "latest",
     "bootstrap": "^5.2.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0",
-    "redux": "^4.2.0",
+    "react": "19.2",
+    "react-dom": "19.2",
+    "react-redux": "latest",
+    "react-router-dom": "^7.18.2",
+    "redux": "latest",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^14.3.1",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "^6.0.5",
     "eslint": "^10.8.1",

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 
 import { useDispatch, useSelector } from "react-redux";
 import useHttp from "./hooks/use-http";
