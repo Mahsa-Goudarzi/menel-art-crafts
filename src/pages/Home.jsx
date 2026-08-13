@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import ProductList from "../components/Products/ProductList";
 import Slider from "../components/Slider/Slider";

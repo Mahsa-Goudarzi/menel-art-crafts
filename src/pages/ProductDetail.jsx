@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { cartActions } from "../store/cart-slice";
@@ -18,7 +18,7 @@ export default function ProductDetail() {
       cartActions.addProduct({
         ...selectedProduct,
         amount: enteredAmountNumber,
-      })
+      }),
     );
   }
 
@@ -42,8 +42,8 @@ export default function ProductDetail() {
           <hr />
           <p>{selectedProduct.description}</p>
           <form onSubmit={addToCartHandler}>
-            <div class="input-group mb-3">
-              <button type="submit" class="btn btn-secondary ">
+            <div className="input-group mb-3">
+              <button type="submit" className="btn btn-secondary ">
                 Add to cart
               </button>
               <label htmlFor={selectedProduct.id} className="visually-hidden">

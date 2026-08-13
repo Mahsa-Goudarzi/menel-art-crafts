@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -38,7 +38,7 @@ function App() {
       {
         url: "https://menel-shopping-website-default-rtdb.firebaseio.com/products.json",
       },
-      setProductsData
+      setProductsData,
     );
   }, [dispatch, fetchProducts]);
 
@@ -46,7 +46,7 @@ function App() {
     function setCartData(data) {
       if (!data.cart) {
         dispatch(
-          cartActions.setCart({ cart: [], totalAmount: 0, totalPrice: 0 })
+          cartActions.setCart({ cart: [], totalAmount: 0, totalPrice: 0 }),
         );
       } else {
         dispatch(cartActions.setCart(data));
@@ -56,7 +56,7 @@ function App() {
       {
         url: "https://menel-shopping-website-default-rtdb.firebaseio.com/cart.json",
       },
-      setCartData
+      setCartData,
     );
   }, [dispatch, fetchCart]);
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./ProductItem.module.css";
 import { useDispatch } from "react-redux";
