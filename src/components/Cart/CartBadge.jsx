@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import classes from "./CartBadge.module.css";
 
 export default function CartBadge() {
-  const [cartIsHighlighted, setCartIsHighlighted] = useState(false);
+  const badgeRef = useRef(null);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-
-  const badgeClasses = `${classes.badge} ${
-    cartIsHighlighted ? classes.bump : ""
-  }`;
 
   useEffect(() => {
     if (cartTotalAmount === 0) {
       return;
     }
 
-    setCartIsHighlighted(true);
+    const badge = badgeRef.current;
+
+    badge.classList.add(classes.bump);
 
     const timer = setTimeout(() => {
-      setCartIsHighlighted(false);
+      badge.classList.remove(classes.bump);
     }, 300);
 
     return () => {
-      // The clean up function
       clearTimeout(timer);
+      badge.classList.remove(classes.bump);
     };
   }, [cartTotalAmount]);
 
   return (
     <div className={classes.button}>
       <span>Cart</span>
-      <div className={badgeClasses}>{cartTotalAmount}</div>
+      <div className={classes.badge} ref={badgeRef}>
+        {cartTotalAmount}
+      </div>
     </div>
   );
 }
