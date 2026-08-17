@@ -52,3 +52,9 @@ export const PRODUCTS_BODY = {
     },
   },
 };
+
+export const emptyCart = {
+  cart: [],
+  totalAmount: 0,
+  totalPrice: 0,
+};

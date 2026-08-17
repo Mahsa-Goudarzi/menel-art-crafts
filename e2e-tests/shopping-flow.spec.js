@@ -1,16 +1,11 @@
 // testing
 import { test, expect } from "@playwright/test";
 // constants
-import { PRODUCTS_BODY } from "./contants.js";
+import { PRODUCTS_BODY, emptyCart } from "./contants.js";
 
 const productId = "p1";
 const product = PRODUCTS_BODY.products[productId];
 const productAmount = 3;
-const emptyCart = {
-  cart: [],
-  totalAmount: 0,
-  totalPrice: 0,
-};
 
 test.beforeEach(async ({ page }) => {
   await page.route(
