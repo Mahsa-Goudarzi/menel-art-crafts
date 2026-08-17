@@ -28,7 +28,7 @@ export default function CartBadge() {
   return (
     <div className={classes.button}>
       <span>Cart</span>
-      <div className={classes.badge} ref={badgeRef}>
+      <div className={classes.badge} ref={badgeRef} data-testid="cart-badge">
         {cartTotalAmount}
       </div>
     </div>
