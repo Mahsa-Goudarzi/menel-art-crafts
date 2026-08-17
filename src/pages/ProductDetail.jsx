@@ -43,7 +43,11 @@ export default function ProductDetail() {
           <p>{selectedProduct.description}</p>
           <form onSubmit={addToCartHandler}>
             <div className="input-group mb-3">
-              <button type="submit" className="btn btn-secondary ">
+              <button
+                type="submit"
+                className="btn btn-secondary "
+                data-testid="add-to-cart"
+              >
                 Add to cart
               </button>
               <label htmlFor={selectedProduct.id} className="visually-hidden">
@@ -57,6 +61,7 @@ export default function ProductDetail() {
                 step="1"
                 defaultValue="1"
                 className="form-control"
+                data-testid="product-amount"
               />
             </div>
           </form>

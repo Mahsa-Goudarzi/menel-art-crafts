@@ -19,6 +19,7 @@ export default function ProductItem(props) {
           <Link
             to={`/products/${item.id}`}
             className={`col ${classes.detail} ${classes.button}`}
+            data-testid={`visit-${item.id}`}
           >
             Visit
           </Link>
