@@ -26,6 +26,7 @@ export default function ProductItem(props) {
           <button
             className={`col ${classes.cart} ${classes.button}`}
             onClick={addToCartHandler}
+            data-testid={`add-to-cart-${item.id}`}
           >
             Add to cart
           </button>
